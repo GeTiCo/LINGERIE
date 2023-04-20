@@ -1,0 +1,183 @@
+﻿<Page x:Class="LINGERIESHOP.View.Settings.AddProduct"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LINGERIESHOP.View.Settings"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1400"
+      Title="AddProduct">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <ListBox
+                    Grid.Column="0"
+                    Name="listCategory"
+                    ItemContainerStyle="{StaticResource listStyle}"
+                    Margin="5,5"
+                    Padding="10,10,0,10"
+                    BorderBrush="#FF007AFF"
+                    BorderThickness="2"
+                    ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                    VirtualizingPanel.ScrollUnit="Pixel"
+                    HorizontalContentAlignment="Center"
+                    SelectionChanged="ListCategory_SelectionChanged">
+            <ListBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </ListBox.Resources>
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Border
+                            BorderThickness="2"
+                            BorderBrush="#FF007AFF"
+                            Width="220"
+                            Height="110"
+                            CornerRadius="20">
+                            <Border.Background>
+                                <ImageBrush ImageSource="{Binding PhotoCat}" Stretch="UniformToFill" Opacity="0.8"/>
+                            </Border.Background>
+                            <TextBlock FontFamily="Sylfaen" Text="{Binding name}" FontSize="25" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Foreground="White"/>
+                        </Border>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2.8*"/>
+            </Grid.ColumnDefinitions>
+            <ListBox
+                Grid.Column="0"
+                x:Name="listViewProducts"
+                Margin="10,5"
+                FontSize="15"
+                FontFamily="Sylfaen"
+                Padding="0,10"
+                HorizontalContentAlignment="Center"
+                ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                VirtualizingPanel.ScrollUnit="Pixel"
+                BorderBrush="#FF007AFF">
+                <ListBox.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="20"/>
+                    </Style>
+                </ListBox.Resources>
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Border
+                            BorderThickness="2"
+                            BorderBrush="#FF007AFF"
+                            Width="75"
+                            Height="100"
+                            CornerRadius="20">
+                                <Border.Background>
+                                    <ImageBrush ImageSource="{Binding Photo}" Stretch="UniformToFill"/>
+                                </Border.Background>
+                                <TextBlock Text="{Binding Uid}" FontSize="15" Foreground="White"/>
+                            </Border>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <Grid Grid.Column="1" Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <StackPanel Orientation="Vertical" Margin="10,0,-10,10">
+                        <TextBox Style="{StaticResource TextBoxStyle2}" Name="NameItem" Text="Name" FontSize="15" FontFamily="Sylfaen" VerticalContentAlignment="Center" Width="600" Height="40" Margin="0,0,0,20"/>
+                        <TextBox Style="{StaticResource TextBoxStyle2}" Name="MaterialItem" Text="Material" FontSize="15" FontFamily="Sylfaen" VerticalContentAlignment="Center" Width="600" Height="40" Margin="0,0,0,20"/>
+                        <TextBox Style="{StaticResource TextBoxStyle2}" Name="StructureItem" Text="Structure" FontSize="15" FontFamily="Sylfaen" VerticalContentAlignment="Center" Width="600" Height="40" Margin="0,0,0,20"/>
+
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox Style="{StaticResource TextBoxStyle2}" Name="InformationItem" TextWrapping="Wrap" Text="Information" FontSize="15" FontFamily="Sylfaen" HorizontalAlignment="Left" VerticalContentAlignment="Top" Margin="40,0,0,0" Width="400" Height="150" Padding="0,10"/>
+                            <StackPanel Orientation="Vertical" Margin="20,0,0,0">
+                                <TextBox Style="{StaticResource TextBoxStyle2}" Name="UidItem" Text="Uid" FontSize="15" FontFamily="Sylfaen" VerticalContentAlignment="Center" Width="180" Height="40" Margin="0,0,0,15"/>
+                                <TextBox Style="{StaticResource TextBoxStyle2}" Name="CostItem"  Text="Cost" FontSize="15" FontFamily="Sylfaen" VerticalContentAlignment="Center" Width="180" Height="40" Margin="0,0,0,15"/>
+                                <TextBox Style="{StaticResource TextBoxStyle2}" Name="SizeItem" Text="Size" FontSize="15" FontFamily="Sylfaen" VerticalContentAlignment="Center" Width="180" Height="40"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <StackPanel Orientation="Vertical">
+                        <Border BorderThickness="1"
+                                BorderBrush="#FF007AFF"
+                                CornerRadius="20"
+                                Padding="0,0"
+                                Margin="10,0"
+                                Width="248"
+                                Height="330"
+                                VerticalAlignment="Center">
+                            <Border.Background>
+                                <ImageBrush ImageSource="/res/default.png"/>
+                            </Border.Background>
+                        </Border>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Button
+                Grid.Row="1"
+                Width="160"
+                Margin="10,5,0,5"
+                BorderBrush="White"
+                Content="Добавить"
+                FontSize="25"
+                HorizontalAlignment="Left"
+                Style="{StaticResource btnStyles}"
+                Click="newlist"/>
+
+            <Button
+                Grid.Row="1"
+                Width="160"
+                Content="Удалить"
+                FontSize="25"
+                Margin="195,5,0,5"
+                HorizontalAlignment="Left"
+                Style="{StaticResource btnStyles}"
+                Click="dellist"/>
+
+            <Button
+                Grid.Row="1"
+                Margin="415,5,0,5"
+                Width="250"
+                FontSize="25"
+                Content="Очистить поля"
+                HorizontalAlignment="Left"
+                Style="{StaticResource btnStyles}"
+                Click="Button_Click"/>
+            <Button
+                Grid.Row="1"
+                Click="NewItemClick"
+                Width="250"
+                Content="Добавить товар"
+                FontSize="25"
+                Margin="0,5,45,5"
+                HorizontalAlignment="Right"
+                Style="{StaticResource btnStyles}"/>
+        </Grid>
+    </Grid>
+</Page>

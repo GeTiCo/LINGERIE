@@ -1,0 +1,136 @@
+﻿<Page x:Class="LINGERIESHOP.View.CompleteOrder"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LINGERIESHOP.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="1400"
+      Title="CompleteOrder">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="75"/>
+        </Grid.RowDefinitions>
+        <Button Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Click="back" Style="{StaticResource back}"/>
+        <DataGrid AutoGenerateColumns="False" x:Name="SecretOrder" Visibility="Hidden">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="UID" Width="0.5*" Binding="{Binding Path=Uid}"/>
+                <DataGridTextColumn Header="Название"   Width="*" Binding="{Binding Path=Name}"/>
+                <DataGridTextColumn Header="Размер"   Width="0.5*" Binding="{Binding Path=Size}"/>
+                <DataGridTextColumn Header="Комплект"   Width="*" Binding="{Binding Path=Structure}"/>
+                <DataGridTextColumn Header="Цена" Width="0.5*" Binding="{Binding Path=Cost}"/>
+                <DataGridTextColumn Header="Кол-во" Width="0.5*" Binding="{Binding Path=Count}"/>
+                <DataGridTextColumn Header="Итого" Width="*" Binding="{Binding Path=Costing}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid
+                Grid.Row="0"
+                Margin="30,0"
+                Background="Transparent"
+                SelectedItem="false"
+                x:Name="order"
+                BorderBrush="Transparent"
+                IsReadOnly="True"
+                AutoGenerateColumns="False"
+                HorizontalScrollBarVisibility="Hidden"
+                VerticalScrollBarVisibility="Hidden"
+                CanUserReorderColumns="False"
+                CanUserResizeColumns="False"
+                CanUserResizeRows="False"
+                CanUserSortColumns="False"
+                CanUserAddRows="False"
+                CanUserDeleteRows="False"
+                GridLinesVisibility="None"
+                VirtualizingPanel.ScrollUnit="Pixel"
+                HeadersVisibility="None"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+            <DataGrid.Resources>
+                <ResourceDictionary>
+                    <Style x:Key="{x:Type DataGridCell}" TargetType="{x:Type DataGridCell}">
+                        <Setter Property="Background" Value="{x:Null}" />
+                        <Setter Property="BorderBrush" Value="{x:Null}" />
+                        <Setter Property="Foreground" Value="Black"/>
+                    </Style>
+                    <Style TargetType="{x:Type DataGridRow}">
+                        <Setter Property="Background" Value="{x:Null}" />
+                        <Setter Property="BorderBrush" Value="{x:Null}" />
+                        <Setter Property="Foreground" Value="Black"/>
+                    </Style>
+                </ResourceDictionary>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Image"  Width="*" IsReadOnly="True" CanUserResize="False">
+                    <DataGridTemplateColumn.CellTemplate >
+                        <DataTemplate>
+                            <Border Background="White" CornerRadius="30" BorderBrush="#FF007AFF" Width="1000" Padding="50,0,50,0" HorizontalAlignment="Center" BorderThickness="2">
+                                <StackPanel Background="White" Margin="75,0,0,0" Orientation="Horizontal" HorizontalAlignment="Center" Width="900" VerticalAlignment="Center" >
+                                    <Image UseLayoutRounding="True"  Source="{Binding Path=Photo}" Width="150" Height="200" Margin="25,0" Stretch="UniformToFill"/>
+                                    <StackPanel Orientation="Vertical" Width="400" Margin="15,30" VerticalAlignment="Center">
+                                        <TextBlock
+                                            Text="{Binding Path=Name}"
+                                            FontSize="25"
+                                            Foreground="#FF007AFF"
+                                            FontFamily="Sylfaen"
+                                            TextWrapping="Wrap"/>
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                            <TextBlock
+                                                Text="{Binding Path=Cost,   StringFormat= Цена: {0}}"
+                                                FontSize="20"
+                                                FontFamily="Sylfaen" HorizontalAlignment="Left"/>
+                                            <TextBlock
+                                                Foreground="#FF007AFF"
+                                                Text="{Binding Path=Uid,   StringFormat= UID: {0}}"
+                                                FontSize="20"
+                                                Margin="40,0,0,0"
+                                                FontFamily="Sylfaen"/>
+                                        </StackPanel>
+                                        <TextBlock
+                                            Text="{Binding Path=Count, StringFormat= Кол-во: {0}}"
+                                            FontSize="20"
+                                            FontFamily="Sylfaen"/>
+                                        <TextBlock
+                                            Text="{Binding Path=Costing, StringFormat= Итог: {0}}"
+                                            FontSize="20"
+                                            FontFamily="Sylfaen"
+                                            FontWeight="Bold"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Style="{StaticResource plus}"  Margin="-10,0,0,0" Name="plus" Click="Button_update"/>
+                                        <Button Style="{StaticResource minus}"  Margin="5,0,0,0" Name="minus" Click="Button_update"/>
+                                        <Button  Style="{StaticResource delet}" Margin="5,0,0,0" Name="delete" Click="Button_update"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid Grid.Row="1" Background="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock
+                    Grid.Column ="0"
+                    Name="wallet"
+                    Style="{StaticResource RTBStyle}"
+                    Foreground="#FF007AFF"
+                    Text="Сумма заказа:"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    FontSize="25"
+                    FontFamily="Sylfaen"
+                    Background="Transparent"/>
+            <Button
+                    Grid.Column="1"
+                    Style="{StaticResource btnStyle}"
+                    Margin="120, 10"
+                    Content="Оплатить"
+                    Click="MakeCheck"/>
+        </Grid>
+    </Grid>
+</Page>
