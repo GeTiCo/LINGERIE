@@ -98,8 +98,8 @@
                                             FontWeight="Bold"/>
                                     </StackPanel>
                                     <StackPanel Orientation="Horizontal">
-                                        <Button Style="{StaticResource plus}"  Margin="-10,0,0,0" Name="plus" Click="Button_update"/>
-                                        <Button Style="{StaticResource minus}"  Margin="5,0,0,0" Name="minus" Click="Button_update"/>
+                                        <Button Style="{StaticResource plus}"  Margin="-10,0,0,0" Name="plus" Click="Button_update" Width="60" Height="60"/>
+                                        <Button Style="{StaticResource minus}"  Margin="5,0,0,0" Name="minus" Click="Button_update" Width="60" Height="60"/>
                                         <Button  Style="{StaticResource delet}" Margin="5,0,0,0" Name="delete" Click="Button_update"/>
                                     </StackPanel>
                                 </StackPanel>

@@ -42,8 +42,7 @@ namespace LINGERIESHOP.View
             listProducts = new List<Classes.Product>();
             try
             {
-                string cs = "data source=RODION_GETICO\\SQLEXPRESS;initial catalog=SwimSuitShop;integrated security=True";
-                SqlConnection sqlConnection = new SqlConnection(cs);
+                SqlConnection sqlConnection = new SqlConnection(ClassTotal.connectionString);
                 sqlConnection.Open();
 
                 SqlDataReader dataReader = null;

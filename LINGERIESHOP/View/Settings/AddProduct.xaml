@@ -14,11 +14,33 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Center">
+            <Button
+                Width="50"
+                Height="50"
+                BorderBrush="White"
+                Content="Добавить"
+                FontSize="25"
+                HorizontalAlignment="Left"
+                Style="{StaticResource plus}"
+                Click="newlist"/>
+
+            <Button
+                Width="50"
+                Height="50"
+                Content="Удалить"
+                FontSize="25"
+                HorizontalAlignment="Left"
+                Style="{StaticResource minus}"
+                Click="dellist"/>
+        </StackPanel>
         <ListBox
                     Grid.Column="0"
                     Name="listCategory"
                     ItemContainerStyle="{StaticResource listStyle}"
-                    Margin="5,5"
+                    Margin="5,5,70,5"
+                    PreviewMouseWheel="listCategory_PreviewMouseWheel"
+                    ScrollViewer.HorizontalScrollBarVisibility="Hidden"
                     Padding="10,10,0,10"
                     BorderBrush="#FF007AFF"
                     BorderThickness="2"
@@ -65,6 +87,7 @@
                 Margin="10,5"
                 FontSize="15"
                 FontFamily="Sylfaen"
+                ItemContainerStyle="{StaticResource listStyle}"
                 Padding="0,10"
                 HorizontalContentAlignment="Center"
                 ScrollViewer.VerticalScrollBarVisibility="Disabled"
@@ -93,7 +116,7 @@
                                 <Border.Background>
                                     <ImageBrush ImageSource="{Binding Photo}" Stretch="UniformToFill"/>
                                 </Border.Background>
-                                <TextBlock Text="{Binding Uid}" FontSize="15" Foreground="White"/>
+                                <Button Click="btnInfo" Background="Transparent" Style="{StaticResource emptybtn}" BorderBrush="Transparent" FontSize="15" Foreground="White"/>
                             </Border>
                         </StackPanel>
                     </DataTemplate>
@@ -113,7 +136,7 @@
                         <StackPanel Orientation="Horizontal">
                             <TextBox Style="{StaticResource TextBoxStyle2}" Name="InformationItem" TextWrapping="Wrap" Text="Information" FontSize="15" FontFamily="Sylfaen" HorizontalAlignment="Left" VerticalContentAlignment="Top" Margin="40,0,0,0" Width="400" Height="150" Padding="0,10"/>
                             <StackPanel Orientation="Vertical" Margin="20,0,0,0">
-                                <TextBox Style="{StaticResource TextBoxStyle2}" Name="UidItem" Text="Uid" FontSize="15" FontFamily="Sylfaen" VerticalContentAlignment="Center" Width="180" Height="40" Margin="0,0,0,15"/>
+                                <TextBox Style="{StaticResource TextBoxStyle2}" Name="UidItem" IsReadOnly="True"  Text="Автоматический" FontSize="15" FontFamily="Sylfaen" VerticalContentAlignment="Center" Width="180" Height="40" Margin="0,0,0,15"/>
                                 <TextBox Style="{StaticResource TextBoxStyle2}" Name="CostItem"  Text="Cost" FontSize="15" FontFamily="Sylfaen" VerticalContentAlignment="Center" Width="180" Height="40" Margin="0,0,0,15"/>
                                 <TextBox Style="{StaticResource TextBoxStyle2}" Name="SizeItem" Text="Size" FontSize="15" FontFamily="Sylfaen" VerticalContentAlignment="Center" Width="180" Height="40"/>
                             </StackPanel>
@@ -122,11 +145,11 @@
                 </Grid>
                 <Grid Grid.Column="1">
                     <StackPanel Orientation="Vertical">
-                        <Border BorderThickness="1"
+                        <Border BorderThickness="2"
                                 BorderBrush="#FF007AFF"
                                 CornerRadius="20"
                                 Padding="0,0"
-                                Margin="10,0"
+                                Margin="0,0,40,0"
                                 Width="248"
                                 Height="330"
                                 VerticalAlignment="Center">
@@ -141,41 +164,20 @@
         <Grid Grid.Row="2">
             <Button
                 Grid.Row="1"
-                Width="160"
                 Margin="10,5,0,5"
-                BorderBrush="White"
-                Content="Добавить"
-                FontSize="25"
-                HorizontalAlignment="Left"
-                Style="{StaticResource btnStyles}"
-                Click="newlist"/>
-
-            <Button
-                Grid.Row="1"
-                Width="160"
-                Content="Удалить"
-                FontSize="25"
-                Margin="195,5,0,5"
-                HorizontalAlignment="Left"
-                Style="{StaticResource btnStyles}"
-                Click="dellist"/>
-
-            <Button
-                Grid.Row="1"
-                Margin="415,5,0,5"
-                Width="250"
+                Width="345"
                 FontSize="25"
                 Content="Очистить поля"
                 HorizontalAlignment="Left"
                 Style="{StaticResource btnStyles}"
-                Click="Button_Click"/>
+                Click="clear"/>
             <Button
                 Grid.Row="1"
                 Click="NewItemClick"
-                Width="250"
+                Width="240"
                 Content="Добавить товар"
                 FontSize="25"
-                Margin="0,5,45,5"
+                Margin="0,5,75,5"
                 HorizontalAlignment="Right"
                 Style="{StaticResource btnStyles}"/>
         </Grid>

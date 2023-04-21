@@ -24,5 +24,10 @@ namespace LINGERIESHOP.View.Settings
         {
             InitializeComponent();
         }
+
+        private void clear(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

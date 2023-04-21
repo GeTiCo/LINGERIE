@@ -92,6 +92,20 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+        <!--Empty Style-->
+        <Style x:Key="emptybtn" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Background="{TemplateBinding Background}">
+                            <ContentPresenter />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
         <!--Button2 Style-->
         <Style x:Key="BbtnStyle2" TargetType="Button">
             <Setter Property="FontSize" Value="25"/>
@@ -458,9 +472,7 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Image
-                            Source="/res/add.png"
-                            Width="60"
-                            Height="60">
+                            Source="/res/add.png">
                         </Image>
                     </ControlTemplate>
                 </Setter.Value>
@@ -472,9 +484,7 @@
                             <ControlTemplate TargetType="Button">
                                 <Image
                             Source="/res/add.png"
-                            Opacity="0.8"
-                                    Width="60"
-                            Height="60">
+                            Opacity="0.8">
                                 </Image>
                             </ControlTemplate>
                         </Setter.Value>
@@ -486,9 +496,7 @@
                             <ControlTemplate TargetType="Button">
                                 <Image
                             Source="/res/add.png"
-                            Opacity="0.4"
-                                    Width="60"
-                            Height="60">
+                            Opacity="0.4">
                                 </Image>
                             </ControlTemplate>
                         </Setter.Value>
@@ -496,6 +504,7 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+
         <!--Minus Style-->
         <Style x:Key="minus" TargetType="Button">
             <Setter Property="Margin" Value="10"/>
@@ -503,9 +512,7 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Image
-                            Source="/res/minus.png"
-                            Width="60"
-                            Height="60">
+                            Source="/res/minus.png">
                         </Image>
                     </ControlTemplate>
                 </Setter.Value>
@@ -517,9 +524,7 @@
                             <ControlTemplate TargetType="Button">
                                 <Image
                             Source="/res/minus.png"
-                            Opacity="0.8"
-                                    Width="60"
-                            Height="60">
+                            Opacity="0.8">
                                 </Image>
                             </ControlTemplate>
                         </Setter.Value>
@@ -531,9 +536,7 @@
                             <ControlTemplate TargetType="Button">
                                 <Image
                             Source="/res/minus.png"
-                            Opacity="0.4"
-                                    Width="60"
-                            Height="60">
+                            Opacity="0.4">
                                 </Image>
                             </ControlTemplate>
                         </Setter.Value>
