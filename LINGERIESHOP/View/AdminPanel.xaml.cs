@@ -21,30 +21,30 @@ namespace LINGERIESHOP.View
     /// </summary>
     public partial class AdminPanel : Page
     {
+        AddProduct Ap = new AddProduct();
+        UpdateProduct Up = new UpdateProduct();
+        DeleteProduct Dp = new DeleteProduct();
+
         public AdminPanel()
         {
             InitializeComponent();
             SettingsFrame.Content = new AddProduct();
+            
         }
 
         private void AddList(object sender, RoutedEventArgs e)
         {
-            SettingsFrame.Content = new AddProduct();
+            SettingsFrame.NavigationService.Navigate(Ap);
         }
 
         private void SettingList(object sender, RoutedEventArgs e)
         {
-            SettingsFrame.Content = new UpdateProduct();
+            SettingsFrame.NavigationService.Navigate(Up);
         }
 
         private void DelList(object sender, RoutedEventArgs e)
         {
-            SettingsFrame.Content = new DeleteProduct();
-        }
-
-        private void settingsOrders(object sender, RoutedEventArgs e)
-        {
-            SettingsFrame.Content = new SettingsOrder();
+            SettingsFrame.NavigationService.Navigate(Dp);
         }
     }
 }

@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("res/default.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("db/model1.context.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("db/model1.tt")]
 
 

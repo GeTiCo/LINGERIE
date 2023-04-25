@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:LINGERIESHOP.View.Settings"
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="1400"
-      Title="AddProduct">
+      Title="NavigationWindow AddProduct">
 
     <Grid>
         <Grid.RowDefinitions>

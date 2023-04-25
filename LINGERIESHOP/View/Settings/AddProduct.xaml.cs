@@ -22,6 +22,7 @@ using Microsoft.VisualBasic;
 using Button = System.Windows.Controls.Button;
 using Page = System.Windows.Controls.Page;
 using Microsoft.Win32;
+using System.ComponentModel;
 
 namespace LINGERIESHOP.View.Settings
 {
@@ -31,8 +32,7 @@ namespace LINGERIESHOP.View.Settings
     public partial class AddProduct : Page
     {
 
-        public static List<Classes.Product> listProducts;
-        public static List<Classes.Category> listCat;
+        
 
         public AddProduct()
         {
@@ -47,7 +47,7 @@ namespace LINGERIESHOP.View.Settings
 
             App.activeCategory = (listCategory.SelectedItem as Category).name;
 
-            listProducts = new List<Classes.Product>();
+            App.listProducts = new List<Classes.Product>();
             try
             {
                 SqlConnection sqlConnection = new SqlConnection(ClassTotal.connectionString);
@@ -79,9 +79,9 @@ namespace LINGERIESHOP.View.Settings
                         string url = App.pathExe + @"/default.png";
                         product.Photo = App.ShowImageBit(url);
                     }
-                    listProducts.Add(product);
+                    App.listProducts.Add(product);
                 }
-                listViewProducts.ItemsSource = listProducts;
+                listViewProducts.ItemsSource = App.listProducts;
                 dataReader.Close();
                 sqlConnection.Close();
             }
@@ -137,6 +137,9 @@ namespace LINGERIESHOP.View.Settings
             {
                 MessageBox.Show(ex.Message);
             }
+            AddProduct AP = new AddProduct();
+            AdminPanel admin = new AdminPanel();
+            admin.SettingsFrame.Refresh();
         }
 
         private void dellist(object sender, RoutedEventArgs e)

@@ -31,6 +31,7 @@ namespace LINGERIESHOP
         public static string activeProduct = "";
 
         public static List<Classes.Category> listCat;
+        public static List<Classes.Product> listProducts;
         public static List<Classes.ProductsInOrder> listProductsInOrders;
 
         //Формирование списка категорий товаров
@@ -88,5 +89,10 @@ namespace LINGERIESHOP
             bit.EndInit();
             return bit;
         }
+        public void refresh()
+        {
+
+        }
+        
     }
 }

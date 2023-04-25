@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LINGERIESHOP.View;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -20,6 +21,9 @@ namespace LINGERIESHOP.Classes
         public static int wallet; 
 
         public static int inLimit = 4;
+
+        public static CompleteOrder co = new CompleteOrder();
+        public static KatalogMakeOrder cmo = new KatalogMakeOrder();
     }
     public class Category
     {

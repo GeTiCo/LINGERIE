@@ -35,3 +35,10 @@ D:\WSlab\LINGERIESHOP\LINGERIESHOP\obj\Debug\View\Settings\UpdateProduct.baml
 D:\WSlab\LINGERIESHOP\LINGERIESHOP\obj\Debug\View\CompleteOrder.g.cs
 D:\WSlab\LINGERIESHOP\LINGERIESHOP\obj\Debug\View\CompleteOrder.baml
 D:\WSlab\LINGERIESHOP\LINGERIESHOP\obj\Debug\App.baml
+D:\WSlab\LINGERIESHOP\LINGERIESHOP\bin\Debug\EntityFramework.dll
+D:\WSlab\LINGERIESHOP\LINGERIESHOP\bin\Debug\EntityFramework.SqlServer.dll
+D:\WSlab\LINGERIESHOP\LINGERIESHOP\bin\Debug\EntityFramework.xml
+D:\WSlab\LINGERIESHOP\LINGERIESHOP\bin\Debug\EntityFramework.SqlServer.xml
+D:\WSlab\LINGERIESHOP\LINGERIESHOP\bin\Debug\ru\EntityFramework.resources.dll
+D:\WSlab\LINGERIESHOP\LINGERIESHOP\obj\Debug\LINGERIESHOP_Content.g.cs
+D:\WSlab\LINGERIESHOP\LINGERIESHOP\obj\Debug\LINGERIESHOP.csproj.CopyComplete

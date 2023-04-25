@@ -128,10 +128,6 @@ namespace LINGERIESHOP.View
             NavigationService.Navigate(new CompleteOrder());
         }
 
-        private void UpdateOrders(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new UpdateProduct());
-        }
         private void inorder(object sender, RoutedEventArgs e)
         {
             if (ClassTotal.Act_idRole == 2)
