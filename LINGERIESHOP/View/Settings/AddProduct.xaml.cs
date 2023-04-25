@@ -137,9 +137,6 @@ namespace LINGERIESHOP.View.Settings
             {
                 MessageBox.Show(ex.Message);
             }
-            AddProduct AP = new AddProduct();
-            AdminPanel admin = new AdminPanel();
-            admin.SettingsFrame.Refresh();
         }
 
         private void dellist(object sender, RoutedEventArgs e)

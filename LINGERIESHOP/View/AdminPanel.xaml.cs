@@ -34,17 +34,17 @@ namespace LINGERIESHOP.View
 
         private void AddList(object sender, RoutedEventArgs e)
         {
-            SettingsFrame.NavigationService.Navigate(Ap);
+            SettingsFrame.Content = new AddProduct();
         }
 
         private void SettingList(object sender, RoutedEventArgs e)
         {
-            SettingsFrame.NavigationService.Navigate(Up);
+            SettingsFrame.Content = new UpdateProduct();
         }
 
         private void DelList(object sender, RoutedEventArgs e)
         {
-            SettingsFrame.NavigationService.Navigate(Dp);
+            SettingsFrame.Content = new DeleteProduct();
         }
     }
 }

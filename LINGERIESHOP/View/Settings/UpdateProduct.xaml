@@ -17,6 +17,7 @@
         <ListBox
                     Grid.Column="0"
                     Name="listCategory"
+                    ScrollViewer.HorizontalScrollBarVisibility="Hidden"
                     PreviewMouseWheel="listCategory_PreviewMouseWheel"
                     ItemContainerStyle="{StaticResource listStyle}"
                     Margin="5,5,70,5"
@@ -69,8 +70,8 @@
                 ItemContainerStyle="{StaticResource listStyle}"
                 Padding="0,10"
                 HorizontalContentAlignment="Center"
+                ScrollViewer.HorizontalScrollBarVisibility="Hidden"
                 ScrollViewer.VerticalScrollBarVisibility="Disabled"
-                ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                 VirtualizingPanel.ScrollUnit="Pixel"
                 BorderBrush="#FF007AFF">
                 <ListBox.Resources>
